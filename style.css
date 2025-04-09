@@ -1,0 +1,82 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fa; /* bg-light */
+}
+
+.card {
+  border-radius: 12px; /* Slightly softer radius */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Slightly softer shadow */
+  border: none; /* Remove default border if shadow is sufficient */
+}
+
+/* Enhance table appearance */
+.table {
+    margin-bottom: 0; /* Remove default bottom margin if inside card */
+}
+.table th {
+    white-space: nowrap; /* Prevent headers from wrapping */
+}
+.table td {
+    vertical-align: middle; /* Align content vertically */
+}
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.05); /* Subtle hover effect */
+}
+
+/* Responsive form adjustments */
+@media (max-width: 767.98px) { /* Target Bootstrap's md breakpoint */
+  .form-group-responsive {
+    flex-direction: column;
+  }
+  .form-group-responsive .col-12 { /* Ensure columns stack correctly */
+     width: 100% !important;
+     margin-bottom: 10px;
+     padding-left: var(--bs-gutter-x,.75rem); /* Restore padding */
+     padding-right: var(--bs-gutter-x,.75rem);
+  }
+   .form-group-responsive .d-flex { /* Fix alignment for checkbox group */
+      justify-content: flex-start !important;
+      align-items: center !important;
+  }
+   .form-group-responsive label.me-2 { /* Adjust label margin */
+      margin-right: 0.5rem !important;
+  }
+}
+
+/* Ensure table scrolls horizontally on small screens */
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* Chart Container - relies on JS maintainAspectRatio: false */
+#rentalChart {
+  max-height: 380px; /* Optional: Set a max height if needed */
+  width: 100% !important;
+}
+
+/* Due Soon List Styling */
+#dueSoonList .list-group-item {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+#dueSoonList .badge {
+    font-size: 0.8em;
+}
+
+/* Style for overdue rows in the table */
+.table-danger, .table-danger > th, .table-danger > td {
+    /* --bs-table-bg: #f8d7da; */ /* Default BS danger */
+    /* Slightly more subtle */
+    background-color: #fceded !important;
+    color: #58151c !important;
+    border-color: #f1aeb5 !important;
+}
+.table-hover .table-danger:hover {
+     background-color: #f7c6c7 !important; /* Darker hover for danger */
+}
+
+/* Improve focus states for accessibility */
+.form-control:focus, .btn:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25); /* Bootstrap default focus */
+    border-color: #86b7fe;
+}
